@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { Paths } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'barcode-test';
+  readonly paths: typeof Paths = Paths;
 }

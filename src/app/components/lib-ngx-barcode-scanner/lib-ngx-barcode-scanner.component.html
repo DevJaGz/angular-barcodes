@@ -1,0 +1,16 @@
+<h2>lib-ngx-barcode-scanner</h2>
+<div class="container">
+  <section>
+    <div class="info">
+      <h4>Scanned code: <span [hidden]="!barcodeValue">
+          {{ barcodeValue }}
+        </span></h4>
+
+    </div>
+    <div class="webcam">
+      <barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)" (started)="(onStarted)">
+      </barcode-scanner-livestream>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.webcam {
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+}
