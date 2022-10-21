@@ -9,4 +9,12 @@
   max-width: 800px;
   overflow: hidden;
   border-radius: 10px;
+
+  ::ng-deep {
+    video {
+      display: flex;
+    }
+
+    canvas {}
+  }
 }

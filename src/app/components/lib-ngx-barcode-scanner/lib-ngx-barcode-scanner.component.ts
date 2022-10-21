@@ -16,13 +16,23 @@ export class LibNgxBarcodeScannerComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    this.barcodeScanner.config = {
+      decoder: {
+        debug: {
+          drawBoundingBox: true,
+        },
+      },
+    };
     this.barcodeScanner.start();
   }
 
   onValueChanges(result: any) {
     console.log('onValueChanges result:', result);
-
+    this.barcodeScanner.stop();
     this.barcodeValue = result.codeResult.code;
+    setTimeout(() => {
+      this.barcodeScanner.start();
+    }, 4000);
   }
 
   onStarted(started: any) {
