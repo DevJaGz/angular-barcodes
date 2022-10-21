@@ -1,1 +1,8 @@
 <p>lib-zxing-scanner works!</p>
+<!-- some.component.html -->
+<select name="" id="" *ngIf="devices.length" (change)="onChangeSelection($event.target)">
+  <option value="">--</option>
+  <option [value]="i" *ngFor="let device of devices; index as i">{{ device.label }}</option>
+</select>
+<zxing-scanner #scanner [formats]="allowedFormats" (camerasFound)="oncamerasFound($event)"
+  (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
