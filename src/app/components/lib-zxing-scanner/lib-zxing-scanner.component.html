@@ -4,5 +4,6 @@
   <option value="">--</option>
   <option [value]="i" *ngFor="let device of devices; index as i">{{ device.label }}</option>
 </select>
-<zxing-scanner #scanner [formats]="allowedFormats" (camerasFound)="oncamerasFound($event)"
-  (scanSuccess)="scanSuccessHandler($event)"></zxing-scanner>
+<zxing-scanner #scanner [(device)]="device" [formats]="allowedFormats" (camerasFound)="oncamerasFound($event)"
+  previewFitMode="cover" (scanSuccess)="scanSuccessHandler($event)">
+</zxing-scanner>
